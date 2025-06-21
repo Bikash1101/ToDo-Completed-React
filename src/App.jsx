@@ -1,6 +1,9 @@
 // // import React from 'react'
 
-import { useState } from "react"
+
+
+import Create from "./components/Create";
+import Read from "./components/Read";
 
 // const App = () => {
 //    var arr = [{name: 'virat', age:37},
@@ -53,34 +56,20 @@ import { useState } from "react"
 
 const App = () => {
 
-  const [todos, settodos] = useState([
-    { id: 1, title: "Kaam Karle Bhai", isCompleted: false }
-  ])
-const [title, settitle] = useState("");
-const [completed, setcompleted] = useState(false);
-const [city, setcity] = useState("delhi")
+  
+  
+// const [completed, setcompleted] = useState(false);
+// const [city, setcity] = useState("delhi")
+
+
+
+
+
 
   return (
-    <div>
-      <h1>Create Task</h1>
-      <form>
-        <input
-        onChange={(e) =>(console.log(e.target.value))} 
-        value={title}
-        type="text" placeholder="Title"/>
-        <br />
-        <input
-        checked= {completed}
-         onChange={(e) => (setcompleted(e.target.checked))} type="checkbox" /> Completed
-        <br />
-        <select value={city} onChange={(e)=>setcity(e.target.value)}>
-          <option value="delhi">Delhi</option>
-          <option value="mumbai">Mumbai</option>
-          <option value="kolkata">Kolkata</option>
-        </select>
-        <br />
-        <button>Create Todo</button>
-      </form>
+    <div className=" flex w-screen h-screen bg-violet-700 p-10 text-white">
+      <Create />
+      <Read />
     </div>
   )
 }
